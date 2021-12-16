@@ -62,9 +62,9 @@ class GP:
     def equivclass(self, input):
         assert type(input) == int
         if input == self.id:
-            return self.id
+            return 0
         else:
-            return input-(input % self.id)*self.id
+            return input % self.id
     
 
 if __name__ == "__main__":
