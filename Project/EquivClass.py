@@ -1,3 +1,12 @@
+'''
+This is for practice and ideas only.
+Since JD is always asking us to submit work on our scratch paper, this is my scratch paper file.
+Nothing much happened here.
+
+Feel free to ignore this file.
+'''
+
+
 from Group import GP
 
 class Eqint:
