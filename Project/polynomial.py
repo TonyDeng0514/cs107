@@ -28,7 +28,8 @@ class Polynomial:
             # but for now, let's stick with the same coefficients
             self.coe[i] = self.c.value[i]
         self.var = 'x'
-
+    
+    # accessor, return the whole polynomial in string 
     def __repr__(self):
         self.output = [0]*self.power
         for i in range(self.power):
@@ -42,6 +43,7 @@ class Polynomial:
             self.realout += '+'
         return self.realout[:-1]
 
+    # add two polynomials together, while making sure the coefficients are in the equivalent class
     def add(self, other):
         assert self.c.compare(other.c)
         for i in range(self.power):

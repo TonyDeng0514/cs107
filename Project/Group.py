@@ -20,7 +20,7 @@ This is a group with modular addition.
 The integers
 
 >>> print(a.equivclass(2))
-2
+0
 
 >>> e = GP(6)
 >>> e.expr()
@@ -32,7 +32,10 @@ The integers
 
 class GP:
     def __init__(self, id: int) -> None:  # define the identity element when starting a new group
-        assert type(id) == int    # since we are using integers here, the identity must be integers
+        try:
+            assert type(id) == int    # since we are using integers here, the identity must be integers
+        except:
+            print('The identity has to be an integer')
         self.id = id    
         if self.id == 0:     # if 0 is the identity, this is the whole integers
             self.value = 'The integers'
@@ -45,7 +48,10 @@ class GP:
 
     # accessor, compare two groups
     def compare(self, other): 
-        assert type(other) == GP
+        try:
+            assert type(other) == GP
+        except:
+            print('Only groups can be compared.')
         if self.id == other.id:  # same identity implies every element is the same
             return True
         else:
@@ -60,7 +66,10 @@ class GP:
     
     # accessor, return the equivalent class of an element in this group
     def equivclass(self, input):
-        assert type(input) == int
+        try:
+            assert type(input) == int
+        except:
+            print('Please input an integer.')
         if input == self.id:
             return 0
         else:
